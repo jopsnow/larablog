@@ -1,5 +1,5 @@
 ## LaraBlog: A Simple Laravel Blog App (with Voyager Admin Panel)
-Simple Blogging System with Voyager(Laravel Nova alternative).
+Simple Blogging System with Voyager(A free alternative for Laravel Nova).
 Voyager is a FREE, open-source admin panel for Laravel application
 
 ## Requirements
@@ -17,7 +17,7 @@ or
 php composer.phar install
 ```
 ### 2. Install Voyager
-After creating your new Laravel application you can include the Voyager package with the following command:
+After installing your app dependencies. you can install voyager package with the following command:
 ```bash
 php artisan voyager:install
 ```

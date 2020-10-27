@@ -24,3 +24,8 @@ Route::get('/foo', [TestController::class, 'index']);
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+Route::get('/home', [HomeController::class, 'index']);
+Route::get('category/{slug}', [CategoryController::class, 'index']);
+Route::get('tag/{slug}', [TagController::class, 'index']);
+Route::get('post/{slug}', [PostController::class, 'index']);
