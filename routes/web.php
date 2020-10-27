@@ -3,6 +3,10 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\TestController;
+use App\Http\Controllers\IndexController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\TagController;
+use App\Http\Controllers\PostController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,7 +29,7 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
-Route::get('/home', [HomeController::class, 'index']);
+Route::get('/home', [IndexController::class, 'index']);
 Route::get('category/{slug}', [CategoryController::class, 'index']);
 Route::get('tag/{slug}', [TagController::class, 'index']);
 Route::get('post/{slug}', [PostController::class, 'index']);
