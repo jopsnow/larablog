@@ -29,7 +29,7 @@ php artisan voyager:admin your@email.com --create
 ```
 
 #### Important!
-Before you access the Voyager admin panel, we need to make a small change to our server configuration, since Voyager requires the 8000 port.
+Before you access the Voyager admin panel, you need to make a small change to our server configuration, since Voyager requires the 8000 port.
 
 
 ### 4. Access the admin panel
