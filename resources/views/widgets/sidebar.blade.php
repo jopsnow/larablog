@@ -4,14 +4,15 @@
     <!-- Search Widget -->
     <div class="card my-4">
         <h5 class="card-header">Search</h5>
-        <div class="card-body">
+        <form class="card-body" action="{{env('APP_URL')}}/search" method="GET" role="search">
+            {{ csrf_field() }}
             <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search for...">
+                <input type="text" name="q" class="form-control" placeholder="Search for...">
                 <span class="input-group-btn">
-                <button class="btn btn-secondary" type="button">Go!</button>
+                <button class="btn btn-secondary" type="submit">Go!</button>
               </span>
             </div>
-        </div>
+        </form>
     </div>
 
     <!-- Categories Widget -->
@@ -23,7 +24,7 @@
                     <ul class="list-unstyled mb-0">
                         @foreach($categories as $category)
                         <li>
-                            <a href="/demo-blog/public/category/{{$category->slug}}">{{$category->name}}</a>
+                            <a href="{{env('APP_URL')}}/category/{{$category->slug}}">{{$category->name}}</a>
                         </li>
                         @endforeach
                     </ul>
@@ -41,7 +42,7 @@
                     <ul class="list-unstyled mb-0">
                         @foreach($tags as $tag)
                             <li>
-                                <a href="/demo-blog/public/tag/{{$tag->slug}}">{{$tag->name}}</a>
+                                <a href="{{env('APP_URL')}}/tag/{{$tag->slug}}">{{$tag->name}}</a>
                             </li>
                         @endforeach
                     </ul>
@@ -59,7 +60,7 @@
                     <ul class="list-unstyled mb-0">
                         @foreach($recent_posts as $post)
                             <li>
-                                <a href="/demo-blog/public/post/{{$post->slug}}">{{$post->title}}</a>
+                            <a href="{{env('APP_URL')}}/post/{{$post->slug}}">{{$post->title}}</a>
                             </li>
                             <hr>
                         @endforeach

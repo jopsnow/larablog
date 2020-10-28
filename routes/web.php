@@ -30,6 +30,7 @@ Route::group(['prefix' => 'admin'], function () {
 });
 
 Route::get('/home', [IndexController::class, 'index']);
+Route::get('/search', [IndexController::class, 'search']);
 Route::get('category/{slug}', [CategoryController::class, 'index']);
 Route::get('tag/{slug}', [TagController::class, 'index']);
 Route::get('post/{slug}', [PostController::class, 'index']);

@@ -6,6 +6,9 @@ use App\Models\Post;
 use App\Models\Category;
 use App\Models\Tag;
 use TCG\Voyager\Models\User;
+use Illuminate\Support\Facades\Log;
+
+
 
 class CategoryController extends Controller
 {
@@ -14,8 +17,9 @@ class CategoryController extends Controller
         // get the requested category
         $category = Category::query()->where('slug', $slug)->first();
 
+
         // get the posts in that category
-        $posts = $category->posts->get();
+        $posts = $category->posts()->get();
         
         // get all tags 
         $tags = Tag::all();
@@ -36,5 +40,6 @@ class CategoryController extends Controller
             'tags' => $tags,
             'recent_posts' => $recent_posts
         ));
+
     }
 }
